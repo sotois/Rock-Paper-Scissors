@@ -6,16 +6,16 @@ def determine_winner(user_choice, computer_choice):
     return "It's a tie!"
   elif user_choice == "rock":
     if computer_choice == "scissors":
-      return "User wins!"
+      return "You win!"
   else:
     return "Computer wins!"
   elif user_choice == "paper":
     if computer_choice == "rock":
-      return "User wins!"
+      return "You win!"
   else: 
     return "Computer wins!"
   elif user_choice == "scissors":
     if computer_choice == "paper":
-      return "User wins!"
+      return "You win!"
   else:
     return "Computer wins!"
