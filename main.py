@@ -1,8 +1,15 @@
 import random 
 
 def get_user_choice():
-  user_choice = input("Enter rock, paper, or scissors: ")
-  return user_choice
+  valid_choice = ['rock', 'paper', 'scissors']
+  while True:
+    user_choice = input("Enter rock, paper, or scissors: ").lower()
+    
+    if user_choice in valid_choice:
+      return user_choice
+    
+    else:
+      print("Invalid choice. Please type 'rock', 'paper', or 'scissors'.")
 
 def get_computer_choice():
     computer_choice = random.choice(['rock', 'paper', 'scissors'])
@@ -31,8 +38,6 @@ def play_game():
   while True: 
     user_choice = get_user_choice()
     computer_choice = get_computer_choice()
-    
-    print("You chose:", user_choice)
     
     result = determine_winner(user_choice, computer_choice)
     print(result)
