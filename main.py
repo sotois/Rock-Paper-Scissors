@@ -35,15 +35,32 @@ def determine_winner(user_choice, computer_choice):
       return "Computer wins!"
     
 def play_game():
+  user_score = 0
+  computer_score = 0
+  
   while True: 
     user_choice = get_user_choice()
     computer_choice = get_computer_choice()
     
     result = determine_winner(user_choice, computer_choice)
     print(result)
-  
-    play_again = input("Do you want to play again? (yes/no): ")
-    if play_again != "yes":
-      break
     
+    if result == "You win!":
+      user_score += 1
+    elif result == "Computer wins!":
+      computer_score += 1
+      
+    print("Score -> User: {} | Computer: {}".format(user_score, computer_score))
+    
+    while True:
+      play_again = input("Do you want to play again? (yes/no): ")
+      if play_again.lower() == "yes":
+        break
+      elif play_again == "no":
+        print("Final score: ")
+        print("User: {} | Computer: {}".format(user_score, computer_score))
+        return
+      else:
+        print("Invalid input. Please type 'yes' or 'no'.")
+  
 play_game()
